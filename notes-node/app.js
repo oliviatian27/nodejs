@@ -1,11 +1,19 @@
-console.log('starting')
+console.log('starting app.js')
 
 const fs=require('fs')
 const os=require('os')
+const notes=require('./notes.js')
 
-let user=os.userInfo()
+const add=notes.add
+console.log(add(1,5))
 
-fs.appendFile('greeting.txt',`hello ${user.username}`,(err)=>{
-  if (err) throw err
-  console.log("appended")
-})
+const _=require('lodash')
+
+console.log(_.isString('ttt'))
+console.log(_.uniq([1,2,1]))
+// let user=os.userInfo()
+//
+// fs.appendFile('greeting.txt',`hello ${user.username} !`,(err)=>{
+//   if (err) throw err
+//   console.log("appended")
+// })
