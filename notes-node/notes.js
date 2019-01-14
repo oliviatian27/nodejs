@@ -1,10 +1,20 @@
 console.log('starting notes.js')
+let fs=require('fs')
 
-module.exports.addNote=()=>{
-  console.log('addNote')
-  return 'added'
-}
+let addNote=(title,body)=>{
+  let notes=[];
+  let note={
+    title,
+    body
+  };
+  notes.push(note)
+};
 
-module.exports.add=(a,b)=>{
-  return a+b
+
+
+
+
+
+module.exports={
+  addNote
 }
