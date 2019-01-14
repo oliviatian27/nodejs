@@ -3,7 +3,7 @@ console.log('starting app.js')
 // const fs=require('fs')
 // const os=require('os')
 // const notes=require('./notes.js')
-//
+const yargs=require('yargs')
 // const add=notes.add
 // console.log(add(1,5))
 //
@@ -18,5 +18,7 @@ console.log('starting app.js')
 //   console.log("appended")
 // })
 
-let command=process.argv[2]
-console.log('command: ',command)
+// let command=process.argv[2]
+// console.log('command: ',command)
+let argv=yargs.argv
+console.log(argv)
