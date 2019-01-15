@@ -1,6 +1,6 @@
 const request = require('request')
 
-let geocodeAddress=(address)=>{
+let geocodeAddress=(address,callback)=>{
  address=encodeURIComponent(address)
 
   request({
@@ -11,15 +11,17 @@ let geocodeAddress=(address)=>{
       // console.log('response',response)
       // console.log('bodysss',body)
       if(error){
-        console.log("can't connect to the server")
-        console.log(error)
+        callback("can't connect to the server")
+
       }else{
         let address=body.results[0].locations[0].street
         let lat = body.results[0].locations[0].latLng.lat
         let lng = body.results[0].locations[0].latLng.lng
-        console.log('address: ',address)
-        console.log('lat',lat)
-        console.log('lng',lng)
+        callback(undefined,{
+          address,
+          lat,
+          lng
+        })
       }
   });
 }
